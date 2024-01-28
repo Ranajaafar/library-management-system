@@ -1,0 +1,15 @@
+services:
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - '6379:6379'
+
+  postgresql:
+    image: postgres:alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=barbie
+      - POSTGRES_PASSWORD=girl
+    ports:
+      - '5432:5432'
