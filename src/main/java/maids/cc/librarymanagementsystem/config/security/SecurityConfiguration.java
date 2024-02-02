@@ -43,7 +43,6 @@ public class SecurityConfiguration implements WebMvcConfigurer {
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
-        //todo: u can replace the lambda with method reference here as well HeadersConfigurer.FrameOptionsConfig::disable
         http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
